@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Crud app</title>
+</head>
+<body>
+ 
+  
+
+
+    <form  class="w-75 mx-auto my-5 shadow-lg p-5">
+      <div class="form-floating mt-3 mb-3">
+        <input type="text" class="form-control"  oninput="Validation(this)"  id="productName" placeholder="">
+        
+        <div  class="alert alert-danger my-3 py-1 d-none">must start with Cap letter ,2-5 small char</div>
+        <label for="productName">product Name:</label>
+      </div>
+      <div class="form-floating mt-3">
+        <input type="text" class="form-control"  oninput="Validation(this)" id="productPrice" placeholder="">
+        <div class="alert alert-danger my-3 py-1 d-none">must enter a valid price  letter </div>
+        <label for="productPrice">productPrice:</label>
+      </div>
+
+      <div class="form-floating mt-3">
+        <input type="file" class="form-control" id="productImage" placeholder="">
+        <label for="productImage">productImage:</label>
+      </div>
+
+      <div class="form-floating mt-3">
+        <select class="form-select"  oninput="Validation(this)"  id="productCat" aria-label="Floating label select example">
+          <option selected>Open this select menu</option>
+          <option value="tvs">tvs</option>
+          <option value="labtops">labtops</option>
+          <option value="mobiles">mobile</option>
+        </select>
+        <div class="alert alert-danger my-3 py-1 d-none">tvs | labtops | mobiles</div>
+        <label for="productCat">select your device:</label>
+      </div>
+
+      <div class="form-floating mt-3">
+        <textarea name="" id="productDesc" class="form-control" rows="5"></textarea>
+        <label for="productDesc">productDesc:</label>
+      </div>
+
+      <button  type="button"  id="addBtn" onclick="addProduct()" class="btn btn-outline-info d-block ms-auto mt-3">add product</button>
+      <button  type="button"  id="updateBtn" onclick="updateProduct()" class="btn btn-outline-info d-block ms-auto mt-3 d-none">update product</button>
+     
+    </form>
+ 
+
+     <div class="container">
+      <input type="text" class="form-control my-4" id="serachInput" oninput="searchFun(this.value)">
+      <div class="row g-4 " id="dataRow">
+     
+      </div>
+     </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
